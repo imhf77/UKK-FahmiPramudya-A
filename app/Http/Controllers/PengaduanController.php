@@ -32,10 +32,11 @@ class PengaduanController extends Controller
             "tgl_pengaduan" => "required",
             "nik" => "required",
             "isi_laporan" => "required",
-            "status" => "required"
+            "status" => "required|status:0"
         ]);
 
         Pengaduan::create($datapeng);
+        dd($datapeng);
     }
 
     /**
