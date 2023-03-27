@@ -12,7 +12,7 @@ class PengaduanController extends Controller
      */
     public function index()
     {
-        //
+        return view('Pengaduan.index');
     }
 
     /**
@@ -20,7 +20,7 @@ class PengaduanController extends Controller
      */
     public function create()
     {
-        //
+        return view('Pengaduan.create');
     }
 
     /**
@@ -28,7 +28,14 @@ class PengaduanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $datapeng = $request->validate([
+            "tgl_pengaduan" => "required",
+            "nik" => "required",
+            "isi_laporan" => "required",
+            "status" => "required"
+        ]);
+
+        Pengaduan::create($datapeng);
     }
 
     /**

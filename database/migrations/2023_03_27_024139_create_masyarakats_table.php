@@ -15,7 +15,7 @@ return new class extends Migration
             $table->bigInteger('nik')->primary();
             $table->string('nama', 35);
             $table->string('username', 25);
-            $table->string('password', 32);
+            $table->string('password');
             $table->string('telp', 13);
             $table->timestamps();
         });
