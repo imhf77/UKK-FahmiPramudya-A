@@ -22,8 +22,7 @@
                   </button>
                 </form> 
             </li>
-              <li><a class="dropdown-item" href="#">Daftar</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="/dashboard/laporan">Dashboard</a></li>
             </ul>
           </li>
         </ul>

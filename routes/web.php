@@ -31,4 +31,4 @@ Route::get('/login',[LoginController::class,'index']);
 Route::post('/login',[LoginController::class,'authenticate']);
 Route::post('/logout',[LoginController::class,'logout']);
 
-Route::get('/dashboard/laporan',[PengaduanController::class,'index']);
+Route::resource('/dashboard/laporan', PengaduanController::class);

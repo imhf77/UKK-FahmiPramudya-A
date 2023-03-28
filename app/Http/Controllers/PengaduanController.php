@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pengaduan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PengaduanController extends Controller
 {
@@ -29,14 +30,14 @@ class PengaduanController extends Controller
     public function store(Request $request)
     {
         $datapeng = $request->validate([
-            "tgl_pengaduan" => "required",
-            "nik" => "required",
+            'tgl_pengaduan' => "required",
             "isi_laporan" => "required",
-            "status" => "required|status:0"
+            'foto' => 'image|file'
         ]);
 
+      $datapeng['nik'] = Auth::masyarakat()->nik;
+       
         Pengaduan::create($datapeng);
-        dd($datapeng);
     }
 
     /**

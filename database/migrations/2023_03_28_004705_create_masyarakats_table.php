@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('petugas', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama_petugas', 35);
-            $table->string('username', 25);
-            $table->string('password', 32);
+        Schema::create('masyarakat', function (Blueprint $table) {
+            $table->char('nik',16)->primary();
+            $table->string('nama', 35);
+            $table->string('username', 25)->unique();
+            $table->string('password');
             $table->string('telp', 13);
-            $table->enum('level', ['admin', 'petugas'])->default('petugas');
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('petugas');
+        Schema::dropIfExists('masyarakat');
     }
 };
